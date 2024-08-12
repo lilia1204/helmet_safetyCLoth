@@ -1,0 +1,14 @@
+.monitoring-settings {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.custom-button {
+    height: 50px;
+}

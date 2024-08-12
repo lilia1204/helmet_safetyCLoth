@@ -1,0 +1,11 @@
+path: ./dataset
+train: train/images
+val: val/images
+test: test/images
+
+nc: 4
+names:
+  0: hat
+  1: nothing
+  2: vest_hat
+  3: vest

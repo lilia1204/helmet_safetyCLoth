@@ -1,0 +1,40 @@
+<div class="container mt-4 view-records">
+    <h2 class="text-center mb-4">查看记录</h2>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="搜索监控名..." id="search-records">
+        <input type="date" class="form-control" id="filter-date">
+        <button class="btn btn-primary" type="button" id="button-search-records">查询记录</button>
+    </div>
+    <div id="error-message" class="alert alert-danger" style="display: none;"></div> <!-- 错误信息元素 -->
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">监控名</th>
+                    <th scope="col">时间</th>
+                </tr>
+            </thead>
+            <tbody id="records-list">
+                <!-- 记录项将在这里动态生成 -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- 无匹配结果的模态框 -->
+<div class="modal fade" id="noResultsModal" tabindex="-1" aria-labelledby="noResultsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noResultsModalLabel">查询无结果</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>没有找到匹配的记录。</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>

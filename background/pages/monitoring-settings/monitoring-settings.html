@@ -1,0 +1,108 @@
+<div class="container mt-4 monitoring-settings">
+    <h2 class="text-center mb-4">监控设置</h2>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="搜索监控..." id="search-monitoring">
+        <button class="btn btn-primary" type="button" id="button-search">查询监控</button>
+    </div>
+    <div class="d-flex justify-content-between mb-4">
+        <button type="button" class="btn btn-success w-100 me-2 custom-button" data-bs-toggle="modal" data-bs-target="#addMonitoringModal">添加监控</button>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">监控名</th>
+                    <th scope="col">开关</th>
+                    <th scope="col">操作</th>
+                </tr>
+            </thead>
+            <tbody id="monitoring-list">
+                <!-- 监控项将在这里动态生成 -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- 添加监控的模态框 -->
+<div class="modal fade" id="addMonitoringModal" tabindex="-1" aria-labelledby="addMonitoringModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addMonitoringModalLabel">添加新监控</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="add-monitoring-form">
+                    <div class="mb-3">
+                        <label for="monitoring-name" class="form-label">监控名称</label>
+                        <input type="text" class="form-control" id="monitoring-name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="monitoring-source" class="form-label">监控视频来源</label>
+                        <input type="text" class="form-control" id="monitoring-source" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary">保存</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 确认删除的模态框 -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">确认删除</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>确定要删除此监控项吗？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-danger" id="confirm-delete">删除</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 确认状态更改的模态框 -->
+<div class="modal fade" id="confirmStatusModal" tabindex="-1" aria-labelledby="confirmStatusModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmStatusModalLabel">确认状态更改</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>确定要更改此监控项的状态吗？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancel-status-change" data-bs-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="confirm-status-change">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 查询无结果的模态框 -->
+<div class="modal fade" id="noResultsModal" tabindex="-1" aria-labelledby="noResultsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noResultsModalLabel">查询无结果</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>没有找到匹配的监控项。</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
